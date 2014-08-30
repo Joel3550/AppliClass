@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <title>Creer Etudiant</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    
+    <h:outputStylesheet library="css" name="bootstrap.css"/>
+    <h:outputStylesheet library="css" name="bootstrap-theme.css"/>
+    <h:outputStylesheet library="css" name="bootstrap-theme.min.css"/>
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    
+    <h:body>
+        
+        <div class="col-sm-6 col-lg-2" style="float: left; padding: 100px 0 0 0;"></div>
+        <div class="col-sm-6 col-lg-3" style="float: left; padding: 100px 0 0 0;">
+        <h:form>
+            <div class="" style="width: 300px;">
+                <strong style="font-family: cursive; font-size: 16px;">
+                    <h:commandLink value="Tp1" action="index" class="list-group-item active">
+                        <span class="glyphicon glyphicon-book" style="float: right;"></span>
+                    </h:commandLink>
+                </strong>
+                <h:commandLink value="Etudiant" class="list-group-item" action="afficher">
+                    <span class="glyphicon glyphicon-home" style="float: right;"></span>
+                </h:commandLink>
+            </div>
+        </h:form>
+        </div>
+        
+        <div class="col-sm-6 col-lg-6" style="float: left; padding: 100px 0 0 0;">
+        <div>
+            <div style="width: 300px;" class="row">
+            <div><strong style="font-family: cursive; font-size: 18px;">CREER UN ETUDIANT</strong></div>
+            <hr></hr>
+            <h:form>
+                <p>
+                    <h:outputLabel>Nom:</h:outputLabel>
+                    <h:inputText value="#{etudiant.nom}" id="nom" class="form-control" style="width: 265px;"></h:inputText>
+                </p>
+                <p>
+                    <h:outputLabel>Prenoms:</h:outputLabel>
+                    <h:inputText value="#{etudiant.prenoms}" id="prenoms" class="form-control" style="width: 265px;"></h:inputText>
+                </p>
+                <p>
+                    <h:outputLabel>Date de Naissance:</h:outputLabel>
+                    <h:inputText value="#{etudiant.dateNaissance}" class="form-control" style="width: 265px;" required="required" />
+                </p>
+                <p>
+                    <h:outputLabel>Moyenne:</h:outputLabel>
+                    <h:inputText value="#{etudiant.moyenne}" id="moyenne" class="form-control" style="width: 265px;"></h:inputText>
+                </p>
+                <div class="btn-group">
+                    <h:commandButton value="Afficher" id="afficher" action="afficher" class="btn btn-info"></h:commandButton>
+                    <input type="reset" value="Annuler" class="btn btn-warning" />
+                    <h:commandLink value="Page d'accueil" class="btn btn-default" action="index"></h:commandLink>
+                </div>
+            </h:form>
+            </div>
+        </div>
+        </div>
+    </h:body>
+    
+</html>

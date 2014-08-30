@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+    <h:head>
+        <title>Liste Etudiant</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    
+    <h:outputStylesheet library="css" name="bootstrap.css"/>
+    <h:outputStylesheet library="css" name="bootstrap-theme.css"/>
+    <h:outputStylesheet library="css" name="bootstrap-theme.min.css"/>
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    
+    <h:body>
+        <div class="col-sm-6 col-lg-2" style="float: left; padding: 100px 0 0 0;"></div>
+        <div class="col-sm-6 col-lg-3" style="float: left; padding: 100px 0 0 0;">
+        <h:form>
+            <div style="width: 300px;">
+                <strong style="font-family: cursive; font-size: 16px;">
+                    <h:commandLink value="Tp1" action="index" class="list-group-item active">
+                        <span class="glyphicon glyphicon-book" style="float: right;"></span>
+                    </h:commandLink>
+                </strong>
+                <h:commandLink value="Etudiant" class="list-group-item" action="afficher">
+                    <span class="glyphicon glyphicon-home" style="float: right;"></span>
+                </h:commandLink>
+            </div>
+        </h:form>
+        </div>
+        
+        <div class="col-sm-6 col-lg-6" style="float: left; padding: 100px 0 0 0;">
+            <table class="table table-hover table-condensed" style="width: 500px; margin-top: 30px;">
+                <caption><strong style="font-family: cursive; font-size: 18px;">LISTE DES ETUDIANTS</strong></caption>
+                <tr>
+                    <td colspan="4" class="hr"></td>
+                </tr>
+                <tr class="active">
+                    <td><strong style="font-family: cursive; font-size: 18px;">Nom</strong></td>
+                    <td><strong style="font-family: cursive; font-size: 18px;">Prenom</strong></td>
+                    <td><strong style="font-family: cursive; font-size: 18px;">Date de naissance</strong></td>
+                    <td><strong style="font-family: cursive; font-size: 18px;">Moyenne</strong></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="#{etudiant.nom}"></h:outputText></td>
+                    <td><h:outputText value="#{etudiant.prenoms}"></h:outputText></td>                    
+                    <td><h:outputText value="#{etudiant.dateNaissance}"></h:outputText></td>
+                    <td><h:outputText value="#{etudiant.moyenne}"></h:outputText></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <h:form>
+                            <h:commandButton value="Creer un etudiant" action="creer_etudiant" class="btn btn-default"></h:commandButton>
+                            <h:commandButton value="Page d'accueil" action="index" class="btn btn-default"></h:commandButton>
+                        </h:form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </h:body>
+        
+</html>
